@@ -21,11 +21,15 @@ const userSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+  role: {
+    type: String,
+    default: 'user'
+  },
   playLists: [
     {
       listName: { type: String, required: true, trim: true },
       state: { type: Boolean, default: false },
-      songs: [ { type: mongoose.Schema.Types.ObjectId, ref: "Song" } ],
+      songs: [{ type: mongoose.Schema.Types.ObjectId, ref: "Song" }],
     },
   ],
 });
